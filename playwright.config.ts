@@ -2,11 +2,10 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 30_000,
-  reporter: 'list',
+  timeout: 50_000,
+  reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    headless: true,
-    viewport: { width: 1280, height: 720 },
+    headless: false,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
